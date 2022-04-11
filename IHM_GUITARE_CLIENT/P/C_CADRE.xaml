@@ -1,0 +1,104 @@
+﻿<Window x:Class="IHM_GUITARE_CLIENT.C_CADRE"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IHM_GUITARE_CLIENT"
+        mc:Ignorable="d"
+        FontSize="18"
+         x:Name="Le_Cadre"
+        xmlns:coordination="clr-namespace:IHM_GUITARE_CLIENT.C" 
+        d:DataContext="{d:DesignInstance Type=coordination:C_COORDINATION}"
+        
+        Title="MainWindow" Height="490" Width="925">
+    <Grid>
+        <GroupBox Header="Nouvelle Guitare" Margin="10,29,0,31" 
+                  HorizontalAlignment="Left" Width="440" 
+                  BorderThickness="3" >
+            <Grid>
+                <ComboBox x:Name="ComboBox_Bois_Corps" ItemsSource="{Binding Les_Bois}"                
+                  SelectedItem="{Binding Nouvelle_Guitare.Le_Bois_Corps}"
+                  HorizontalAlignment="Left" Margin="172,89,0,0" VerticalAlignment="Top" Width="225">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Nom}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox x:Name="ComboBox_Bois_Manche" ItemsSource="{Binding Les_Bois}"
+            
+            SelectedItem="{Binding Nouvelle_Guitare.Le_Bois_Manche}"
+            HorizontalAlignment="Left" Margin="172,137,0,0" VerticalAlignment="Top" Width="225">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Nom}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox x:Name="ComboBox_Bois_Touche" ItemsSource="{Binding Les_Bois}"
+            
+            SelectedItem="{Binding Nouvelle_Guitare.Le_Bois_Touche}"
+            HorizontalAlignment="Left" Margin="172,190,0,0" VerticalAlignment="Top" Width="225">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Nom}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Label Content="Bois Touche :" HorizontalAlignment="Left" Margin="16,190,0,0" VerticalAlignment="Top"/>
+                <Label Content="Bois Manche :" HorizontalAlignment="Left" Margin="16,135,0,0" VerticalAlignment="Top"/>
+                <Label Content="Bois Corps :" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Bouton_New" Content="NEW" Click="Bouton_New_Click"
+                HorizontalAlignment="Left" Margin="327,39,0,0" VerticalAlignment="Top" Width="70"/>
+                <ComboBox x:Name="ComboBox_Bois_Corps_Copy" ItemsSource="{Binding Les_Clients}"                
+                    SelectedItem="{Binding Client_Actuel}"
+                    HorizontalAlignment="Left" Margin="174,39,0,0" VerticalAlignment="Top" Width="125">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Nom}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Label Content="Nom Client:" HorizontalAlignment="Left" Margin="18,35,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="Label_ID_Guitare_Copy" Background="Azure"
+            Content="{Binding Nouvelle_Guitare.ID_GUITARE}" d:Content="XXX" HorizontalAlignment="Left" Margin="147,244,0,0" VerticalAlignment="Top"/>
+                <Label Content="Guitare ID :" HorizontalAlignment="Left" Margin="18,244,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="Bouton_Update" Content="Update" Click="Bouton_Update_Click"
+                    HorizontalAlignment="Left" Margin="229,250,0,0" VerticalAlignment="Top" Width="70"/>
+
+            </Grid>
+        </GroupBox>
+
+        <Label x:Name="Label_ID_Guitare" Background="Azure"
+               Content="{Binding Guitare_Actelle.ID_GUITARE}" d:Content="XXX" HorizontalAlignment="Left" Margin="701,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Guitare_Actelle.Le_Bois_Corps.Nom}"
+            d:Content="Le_Bois_Corps" HorizontalAlignment="Left" Margin="660,221,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Guitare_Actelle.Le_Bois_Manche.Nom}"
+            d:Content="Le_Bois_Manche" HorizontalAlignment="Left" Margin="660,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Guitare_Actelle.Le_Bois_Touche.Nom}"
+            d:Content="Le_Bois_Touche" HorizontalAlignment="Left" Margin="667,299,0,0" VerticalAlignment="Top"/>
+        <Label Content="Guitare ID :" HorizontalAlignment="Left" Margin="572,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bois Corps :" HorizontalAlignment="Left" Margin="506,221,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bois Manche :" HorizontalAlignment="Left" Margin="506,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bois Touche :" HorizontalAlignment="Left" Margin="506,299,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBox_Guitares"
+                   ItemsSource="{Binding Les_Guitares}"
+                   SelectedItem="{Binding Guitare_Actelle}"
+            HorizontalAlignment="Left" Margin="616,91,0,0" VerticalAlignment="Top" Width="147">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ID_GUITARE}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Guitare ID :" HorizontalAlignment="Left" Margin="491,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Guitare ID :" HorizontalAlignment="Left" Margin="491,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Proprietaire :" HorizontalAlignment="Left" Margin="506,179,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Guitare_Actelle.Le_Proprietaire.Nom}"
+            d:Content="Proprietaire" HorizontalAlignment="Left" Margin="660,179,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Bouton_Actualiser_Liste_Guitares" Click="Bouton_Actualiser_Liste_Guitares_Click"
+            Content="Actualiser" HorizontalAlignment="Left" Margin="783,92,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

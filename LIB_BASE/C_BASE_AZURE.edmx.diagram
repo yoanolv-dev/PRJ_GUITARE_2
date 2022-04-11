@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1d3e368cd87d4a9181a321668c3d4bea" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="NS_BASE_AZURE.C_BOIS" Width="1.5" PointX="8.625" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NS_BASE_AZURE.C_CLIENT" Width="1.5" PointX="0.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NS_BASE_AZURE.C_GUITARE" Width="1.5" PointX="4.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NS_BASE_AZURE.C_MICRO" Width="1.5" PointX="4.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NS_BASE_AZURE.C_VIBRATO" Width="1.5" PointX="1.125" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_BOIS" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_BOIS1" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_BOIS2" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_MICRO" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_MICRO1" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_MICRO2" ManuallyRouted="false" />
+        <AssociationConnector Association="NS_BASE_AZURE.FK_GUITARE_VIBRATO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

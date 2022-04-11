@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="https://ws-guitare-jlv.azurewebsites.net/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="https://ws-guitare-jlv.azurewebsites.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ws-guitare-jlv.azurewebsites.net/">
+      <s:element name="Get_All_Bois">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_All_BoisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_All_BoisResult" type="tns:ArrayOfC_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_BOIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_BOIS" nillable="true" type="tns:C_BOIS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_BOIS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_BOIS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Origine" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Bois_By_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Bois_By_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Bois_By_IdResult" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Bois_By_Nom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Bois_By_NomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Bois_By_NomResult" type="tns:ArrayOfC_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Bois">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_BoisResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Add_Bois">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Origine" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_BoisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_BoisResult" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Bois_Object">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Bois" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Bois_ObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Bois_ObjectResult" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Bois">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Bois" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_BoisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_BoisResult" type="tns:C_BOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_All_Clients">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_All_ClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_All_ClientsResult" type="tns:ArrayOfC_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_CLIENT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_CLIENT" nillable="true" type="tns:C_CLIENT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_CLIENT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_CLIENT" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Client_By_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Client_By_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Client_By_IdResult" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Clients_By_Nom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Clients_By_NomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Clients_By_NomResult" type="tns:ArrayOfC_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_ClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Add_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_ClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_ClientResult" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Client_Object">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Client" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Client_ObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Client_ObjectResult" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Client" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_ClientResult" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_All_Micros">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_All_MicrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_All_MicrosResult" type="tns:ArrayOfC_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_MICRO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_MICRO" nillable="true" type="tns:C_MICRO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_MICRO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_MICRO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marque" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Micro_By_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Micro_By_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Micro_By_IdResult" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Micro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_MicroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Add_Micro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Marque" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_MicroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_MicroResult" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Micro_Object">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Micro" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Micro_ObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Micro_ObjectResult" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Micro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Micro" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_MicroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_MicroResult" type="tns:C_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_All_Vibratos">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_All_VibratosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_All_VibratosResult" type="tns:ArrayOfC_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_VIBRATO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_VIBRATO" nillable="true" type="tns:C_VIBRATO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_VIBRATO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_VIBRATO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modele" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marque" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Vibrato_By_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Vibrato_By_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Vibrato_By_IdResult" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Vibrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_VibratoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Add_Vibrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Modele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="P_Marque" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_VibratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_VibratoResult" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Vibrato_Object">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Vibrato" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Vibrato_ObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Vibrato_ObjectResult" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Vibrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Vibrato" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_VibratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_VibratoResult" type="tns:C_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_All_Guitares">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_All_GuitaresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_All_GuitaresResult" type="tns:ArrayOfC_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_GUITARE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_GUITARE" nillable="true" type="tns:C_GUITARE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_GUITARE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_GUITARE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdClient" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdVibrato" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdBois_Corps" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdBois_Manche" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdBois_Touche" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdMicro_Neck" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdMicro_Central" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdMicro_Bridge" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Bois_Corps" type="tns:C_BOIS" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Bois_Manche" type="tns:C_BOIS" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Bois_Touche" type="tns:C_BOIS" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Proprietaire" type="tns:C_CLIENT" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Micro_Neck" type="tns:C_MICRO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Micro_Central" type="tns:C_MICRO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Micro_Bridge" type="tns:C_MICRO" />
+          <s:element minOccurs="0" maxOccurs="1" name="Le_Vibrato" type="tns:C_VIBRATO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Guitare_By_Id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Guitare_By_IdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Guitare_By_IdResult" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Guitares_By_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Client" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Guitares_By_ClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Guitares_By_ClientResult" type="tns:ArrayOfC_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Guitare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="P_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_GuitareResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Create_Guitare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Client" type="tns:C_CLIENT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_GuitareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_GuitareResult" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Guitare_Object">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Guitare" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add_Guitare_ObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Add_Guitare_ObjectResult" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Guitare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="P_Guitare" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_GuitareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_GuitareResult" type="tns:C_GUITARE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_All_BoisSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_All_Bois" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_BoisSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_All_BoisResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Bois_By_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Bois_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="Get_Bois_By_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Bois_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Bois_By_NomSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Bois_By_Nom" />
+  </wsdl:message>
+  <wsdl:message name="Get_Bois_By_NomSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Bois_By_NomResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BoisSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Bois" />
+  </wsdl:message>
+  <wsdl:message name="Delete_BoisSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_BoisResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_BoisSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Bois" />
+  </wsdl:message>
+  <wsdl:message name="Add_BoisSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_BoisResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_Bois_ObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Bois_Object" />
+  </wsdl:message>
+  <wsdl:message name="Add_Bois_ObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_Bois_ObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_BoisSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Bois" />
+  </wsdl:message>
+  <wsdl:message name="Update_BoisSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_BoisResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_ClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_All_Clients" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_ClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_All_ClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Client_By_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Client_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="Get_Client_By_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Client_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Clients_By_NomSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Clients_By_Nom" />
+  </wsdl:message>
+  <wsdl:message name="Get_Clients_By_NomSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Clients_By_NomResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Client" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Client" />
+  </wsdl:message>
+  <wsdl:message name="Add_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_Client_ObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Client_Object" />
+  </wsdl:message>
+  <wsdl:message name="Add_Client_ObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_Client_ObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Client" />
+  </wsdl:message>
+  <wsdl:message name="Update_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_MicrosSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_All_Micros" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_MicrosSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_All_MicrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Micro_By_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Micro_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="Get_Micro_By_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Micro_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_MicroSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Micro" />
+  </wsdl:message>
+  <wsdl:message name="Delete_MicroSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_MicroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_MicroSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Micro" />
+  </wsdl:message>
+  <wsdl:message name="Add_MicroSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_MicroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_Micro_ObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Micro_Object" />
+  </wsdl:message>
+  <wsdl:message name="Add_Micro_ObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_Micro_ObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_MicroSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Micro" />
+  </wsdl:message>
+  <wsdl:message name="Update_MicroSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_MicroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_VibratosSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_All_Vibratos" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_VibratosSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_All_VibratosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Vibrato_By_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Vibrato_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="Get_Vibrato_By_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Vibrato_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_VibratoSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Vibrato" />
+  </wsdl:message>
+  <wsdl:message name="Delete_VibratoSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_VibratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_VibratoSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Vibrato" />
+  </wsdl:message>
+  <wsdl:message name="Add_VibratoSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_VibratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_Vibrato_ObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Vibrato_Object" />
+  </wsdl:message>
+  <wsdl:message name="Add_Vibrato_ObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_Vibrato_ObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_VibratoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Vibrato" />
+  </wsdl:message>
+  <wsdl:message name="Update_VibratoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_VibratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_GuitaresSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_All_Guitares" />
+  </wsdl:message>
+  <wsdl:message name="Get_All_GuitaresSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_All_GuitaresResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Guitare_By_IdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Guitare_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="Get_Guitare_By_IdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Guitare_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Guitares_By_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Guitares_By_Client" />
+  </wsdl:message>
+  <wsdl:message name="Get_Guitares_By_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Guitares_By_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_GuitareSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Guitare" />
+  </wsdl:message>
+  <wsdl:message name="Delete_GuitareSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_GuitareResponse" />
+  </wsdl:message>
+  <wsdl:message name="Create_GuitareSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_Guitare" />
+  </wsdl:message>
+  <wsdl:message name="Create_GuitareSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_GuitareResponse" />
+  </wsdl:message>
+  <wsdl:message name="Add_Guitare_ObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:Add_Guitare_Object" />
+  </wsdl:message>
+  <wsdl:message name="Add_Guitare_ObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:Add_Guitare_ObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_GuitareSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Guitare" />
+  </wsdl:message>
+  <wsdl:message name="Update_GuitareSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_GuitareResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="Get_All_Bois">
+      <wsdl:input message="tns:Get_All_BoisSoapIn" />
+      <wsdl:output message="tns:Get_All_BoisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Id">
+      <wsdl:input message="tns:Get_Bois_By_IdSoapIn" />
+      <wsdl:output message="tns:Get_Bois_By_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Nom">
+      <wsdl:input message="tns:Get_Bois_By_NomSoapIn" />
+      <wsdl:output message="tns:Get_Bois_By_NomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Bois">
+      <wsdl:input message="tns:Delete_BoisSoapIn" />
+      <wsdl:output message="tns:Delete_BoisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois">
+      <wsdl:input message="tns:Add_BoisSoapIn" />
+      <wsdl:output message="tns:Add_BoisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois_Object">
+      <wsdl:input message="tns:Add_Bois_ObjectSoapIn" />
+      <wsdl:output message="tns:Add_Bois_ObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Bois">
+      <wsdl:input message="tns:Update_BoisSoapIn" />
+      <wsdl:output message="tns:Update_BoisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Clients">
+      <wsdl:input message="tns:Get_All_ClientsSoapIn" />
+      <wsdl:output message="tns:Get_All_ClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Client_By_Id">
+      <wsdl:input message="tns:Get_Client_By_IdSoapIn" />
+      <wsdl:output message="tns:Get_Client_By_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Clients_By_Nom">
+      <wsdl:input message="tns:Get_Clients_By_NomSoapIn" />
+      <wsdl:output message="tns:Get_Clients_By_NomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Client">
+      <wsdl:input message="tns:Delete_ClientSoapIn" />
+      <wsdl:output message="tns:Delete_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client">
+      <wsdl:input message="tns:Add_ClientSoapIn" />
+      <wsdl:output message="tns:Add_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client_Object">
+      <wsdl:input message="tns:Add_Client_ObjectSoapIn" />
+      <wsdl:output message="tns:Add_Client_ObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Client">
+      <wsdl:input message="tns:Update_ClientSoapIn" />
+      <wsdl:output message="tns:Update_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Micros">
+      <wsdl:input message="tns:Get_All_MicrosSoapIn" />
+      <wsdl:output message="tns:Get_All_MicrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Micro_By_Id">
+      <wsdl:input message="tns:Get_Micro_By_IdSoapIn" />
+      <wsdl:output message="tns:Get_Micro_By_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Micro">
+      <wsdl:input message="tns:Delete_MicroSoapIn" />
+      <wsdl:output message="tns:Delete_MicroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro">
+      <wsdl:input message="tns:Add_MicroSoapIn" />
+      <wsdl:output message="tns:Add_MicroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro_Object">
+      <wsdl:input message="tns:Add_Micro_ObjectSoapIn" />
+      <wsdl:output message="tns:Add_Micro_ObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Micro">
+      <wsdl:input message="tns:Update_MicroSoapIn" />
+      <wsdl:output message="tns:Update_MicroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Vibratos">
+      <wsdl:input message="tns:Get_All_VibratosSoapIn" />
+      <wsdl:output message="tns:Get_All_VibratosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Vibrato_By_Id">
+      <wsdl:input message="tns:Get_Vibrato_By_IdSoapIn" />
+      <wsdl:output message="tns:Get_Vibrato_By_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Vibrato">
+      <wsdl:input message="tns:Delete_VibratoSoapIn" />
+      <wsdl:output message="tns:Delete_VibratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato">
+      <wsdl:input message="tns:Add_VibratoSoapIn" />
+      <wsdl:output message="tns:Add_VibratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato_Object">
+      <wsdl:input message="tns:Add_Vibrato_ObjectSoapIn" />
+      <wsdl:output message="tns:Add_Vibrato_ObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Vibrato">
+      <wsdl:input message="tns:Update_VibratoSoapIn" />
+      <wsdl:output message="tns:Update_VibratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Guitares">
+      <wsdl:input message="tns:Get_All_GuitaresSoapIn" />
+      <wsdl:output message="tns:Get_All_GuitaresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitare_By_Id">
+      <wsdl:input message="tns:Get_Guitare_By_IdSoapIn" />
+      <wsdl:output message="tns:Get_Guitare_By_IdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitares_By_Client">
+      <wsdl:input message="tns:Get_Guitares_By_ClientSoapIn" />
+      <wsdl:output message="tns:Get_Guitares_By_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Guitare">
+      <wsdl:input message="tns:Delete_GuitareSoapIn" />
+      <wsdl:output message="tns:Delete_GuitareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_Guitare">
+      <wsdl:input message="tns:Create_GuitareSoapIn" />
+      <wsdl:output message="tns:Create_GuitareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Guitare_Object">
+      <wsdl:input message="tns:Add_Guitare_ObjectSoapIn" />
+      <wsdl:output message="tns:Add_Guitare_ObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Guitare">
+      <wsdl:input message="tns:Update_GuitareSoapIn" />
+      <wsdl:output message="tns:Update_GuitareSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_All_Bois">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Bois" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Id">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Bois_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Nom">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Bois_By_Nom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Bois">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Bois" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Bois" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois_Object">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Bois_Object" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Bois">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Bois" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Clients">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Clients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Client_By_Id">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Client_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Clients_By_Nom">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Clients_By_Nom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Client">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client_Object">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Client_Object" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Client">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Micros">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Micros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Micro_By_Id">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Micro_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Micro">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Micro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Micro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro_Object">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Micro_Object" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Micro">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Micro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Vibratos">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Vibratos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Vibrato_By_Id">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Vibrato_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Vibrato">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Vibrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Vibrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato_Object">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Vibrato_Object" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Vibrato">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Vibrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Guitares">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Guitares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitare_By_Id">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Guitare_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitares_By_Client">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Guitares_By_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Guitare">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Guitare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_Guitare">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Create_Guitare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Guitare_Object">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Guitare_Object" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Guitare">
+      <soap:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Guitare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_All_Bois">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Bois" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Id">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Bois_By_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bois_By_Nom">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Bois_By_Nom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Bois">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Bois" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Bois" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Bois_Object">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Bois_Object" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Bois">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Bois" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Clients">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Clients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Client_By_Id">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Client_By_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Clients_By_Nom">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Clients_By_Nom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Client">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Client_Object">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Client_Object" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Client">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Micros">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Micros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Micro_By_Id">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Micro_By_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Micro">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Micro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Micro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Micro_Object">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Micro_Object" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Micro">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Micro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Vibratos">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Vibratos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Vibrato_By_Id">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Vibrato_By_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Vibrato">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Vibrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Vibrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Vibrato_Object">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Vibrato_Object" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Vibrato">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Vibrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_All_Guitares">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_All_Guitares" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitare_By_Id">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Guitare_By_Id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Guitares_By_Client">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Get_Guitares_By_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Guitare">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Delete_Guitare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_Guitare">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Create_Guitare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Guitare_Object">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Add_Guitare_Object" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Guitare">
+      <soap12:operation soapAction="https://ws-guitare-jlv.azurewebsites.net/Update_Guitare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="http://ws-guitare-jlv.azurewebsites.net/WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="http://ws-guitare-jlv.azurewebsites.net/WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
